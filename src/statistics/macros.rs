@@ -6,11 +6,11 @@
 #[macro_export]
 macro_rules! atomic_increment {
     ($metric:expr) => {
-        $metric.fetch_add(1, Ordering::Relaxed);
+        $metric.fetch_add(1, Ordering::Relaxed)
     };
 
     ($metric:expr, $value:expr) => {
-        $metric.fetch_add($value, Ordering::Relaxed);
+        $metric.fetch_add($value, Ordering::Relaxed)
     };
 }
 
@@ -18,10 +18,10 @@ macro_rules! atomic_increment {
 #[macro_export]
 macro_rules! atomic_load {
     ($metric:expr) => {
-        $metric.load(Ordering::Relaxed);
+        $metric.load(Ordering::Relaxed)
     };
     ($metric:expr, $ordering:expr) => {
-        $metric.load($ordering);
+        $metric.load($ordering)
     };
 }
 
@@ -29,9 +29,9 @@ macro_rules! atomic_load {
 #[macro_export]
 macro_rules! atomic_store {
     ($metric:expr, $value:expr) => {
-        $metric.store($value, Ordering::Relaxed);
+        $metric.store($value, Ordering::Relaxed)
     };
     ($metric:expr, $value:expr, $ordering:expr) => {
-        $metric.store($value, $ordering);
+        $metric.store($value, $ordering)
     };
 }
